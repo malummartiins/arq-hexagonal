@@ -1,5 +1,6 @@
 package com.eventostec.api.application.service;
 
+import com.eventostec.api.application.usecases.EventUseCases;
 import com.eventostec.api.domain.address.Address;
 import com.eventostec.api.domain.coupon.Coupon;
 import com.eventostec.api.domain.event.*;
@@ -30,7 +31,7 @@ import java.util.stream.Collectors;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class EventService {
+public class EventServiceImpl implements EventUseCases {
 
     @Value("${aws.bucket.name}")
     private String bucketName;
@@ -41,7 +42,7 @@ public class EventService {
     private final S3Client s3Client;
     private final AddressService addressService;
     private final CouponService couponService;
-    private final JpaEventRepository repository;
+    private final EventRepository repository;
 
     @Autowired
     private EventMapper mapper;
@@ -64,8 +65,8 @@ public class EventService {
     }
 
     public List<EventResponseDTO> getUpcomingEvents(int page, int size) {
-        Pageable pageable = PageRequest.of(page, size);
-        Page<EventAddressProjection> eventsPage = this.repository.findUpcomingEvents(new Date(), pageable);
+
+        Page<EventAddressProjection> eventsPage = this.repository.findUpComingEvents(page, size);
         return eventsPage.map(event -> new EventResponseDTO(
                         event.getId(),
                         event.getTitle(),
@@ -141,9 +142,8 @@ public class EventService {
         startDate = (startDate != null) ? startDate : new Date(0);
         endDate = (endDate != null) ? endDate : new Date();
 
-        Pageable pageable = PageRequest.of(page, size);
 
-        Page<EventAddressProjection> eventsPage = this.repository.findFilteredEvents(city, uf, startDate, endDate, pageable);
+        Page<EventAddressProjection> eventsPage = this.repository.findFilteredEvents(city, uf, startDate, endDate, page, size);
         return eventsPage.map(event -> new EventResponseDTO(
                         event.getId(),
                         event.getTitle(),
