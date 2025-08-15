@@ -1,3 +1,5 @@
+# Foco:
+Utilizar o projeto para estudar a arquitetura hexagonal
 
 # Etapas para o deploy
 
