@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 import java.util.List;
@@ -16,9 +17,8 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+@Repository
 public class EventRepositoryImpl implements EventRepository {
-
-
     private final JpaEventRepository jpaEventRepository;
    @Autowired
     EventMapper mapper;
@@ -40,7 +40,7 @@ public class EventRepositoryImpl implements EventRepository {
     @Override
     public Optional<Event> findById(UUID id) {
         Optional<JpaEventEntity> eventEntity = this.jpaEventRepository.findById(id);
-        return eventEntity.map(mapper::toDomain);
+        return eventEntity.map(mapper::jpaToDomain);
     }
 
     @Override
