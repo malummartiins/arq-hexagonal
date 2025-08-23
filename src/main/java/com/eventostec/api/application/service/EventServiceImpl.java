@@ -25,8 +25,8 @@ public class EventServiceImpl implements EventUseCases {
     @Value("${admin.key}")
     private String adminKey;
 
-    private final AddressService addressService; //criar o addressUseCases
-    private final CouponService couponService;
+    private final AddressServiceImpl addressService; //criar o addressUseCases
+    private final CouponServiceImpl couponService;
     private final EventRepository repository;
     private final ImageUploaderPort imageUploaderPort;
 

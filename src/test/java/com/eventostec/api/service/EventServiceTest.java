@@ -1,7 +1,7 @@
 package com.eventostec.api.service;
 
-import com.eventostec.api.application.service.AddressService;
-import com.eventostec.api.application.service.CouponService;
+import com.eventostec.api.application.service.AddressServiceImpl;
+import com.eventostec.api.application.service.CouponServiceImpl;
 import com.eventostec.api.application.service.EventServiceImpl;
 import com.eventostec.api.domain.event.*;
 import com.eventostec.api.adapters.outbound.repositories.eventRepo.JpaEventRepository;
@@ -35,10 +35,10 @@ class EventServiceTest {
     private S3Utilities s3Utilities;
 
     @Mock
-    private AddressService addressService;
+    private AddressServiceImpl addressService;
 
     @Mock
-    private CouponService couponService;
+    private CouponServiceImpl couponService;
 
     @Mock
     private JpaEventRepository repository;

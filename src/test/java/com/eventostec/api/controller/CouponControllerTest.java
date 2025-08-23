@@ -3,7 +3,7 @@ package com.eventostec.api.controller;
 import com.eventostec.api.adapters.inbound.controller.CouponController;
 import com.eventostec.api.domain.coupon.Coupon;
 import com.eventostec.api.domain.coupon.CouponRequestDTO;
-import com.eventostec.api.application.service.CouponService;
+import com.eventostec.api.application.service.CouponServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ class CouponControllerTest {
     private MockMvc mockMvc;
 
     @MockBean
-    private CouponService couponService;
+    private CouponServiceImpl couponService;
 
     @Autowired
     private ObjectMapper objectMapper;

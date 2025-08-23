@@ -1,5 +1,6 @@
 package com.eventostec.api.application.service;
 
+import com.eventostec.api.application.usecases.CouponUseCases;
 import com.eventostec.api.domain.coupon.Coupon;
 import com.eventostec.api.domain.coupon.CouponRequestDTO;
 import com.eventostec.api.domain.event.Event;
@@ -14,7 +15,7 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class CouponService {
+public class CouponServiceImpl implements CouponUseCases {
 
     private final JpaCouponRepository couponRepository;
     private final JpaEventRepository eventRepository;

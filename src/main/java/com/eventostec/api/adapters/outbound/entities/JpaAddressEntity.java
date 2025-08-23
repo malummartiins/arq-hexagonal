@@ -1,5 +1,6 @@
 package com.eventostec.api.adapters.outbound.entities;
 
+import com.eventostec.api.domain.address.Address;
 import com.eventostec.api.domain.event.Event;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -27,6 +28,12 @@ public class JpaAddressEntity {
     @JoinColumn(name = "event_id")
     private Event event;
 
+    public JpaAddressEntity(Address address) {
+        this.id = address.getId();
+        this.city = address.getCity();
+        this.uf = address.getUf();
+        this.event = address.getEvent();
+    }
 }
 
 

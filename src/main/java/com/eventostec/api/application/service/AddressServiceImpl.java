@@ -1,6 +1,8 @@
 package com.eventostec.api.application.service;
 
+import com.eventostec.api.application.usecases.AddressUseCases;
 import com.eventostec.api.domain.address.Address;
+import com.eventostec.api.domain.address.AddressRepository;
 import com.eventostec.api.domain.event.Event;
 import com.eventostec.api.domain.event.EventRequestDTO;
 import com.eventostec.api.adapters.outbound.repositories.addressRepo.JpaAddressRepository;
@@ -12,9 +14,9 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class AddressService {
+public class AddressServiceImpl implements AddressUseCases {
 
-    private final JpaAddressRepository addressRepository;
+    private final AddressRepository addressRepository;
 
     public void createAddress(EventRequestDTO data, Event event) {
         Address address = new Address();

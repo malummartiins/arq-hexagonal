@@ -1,6 +1,6 @@
 package com.eventostec.api.service;
 
-import com.eventostec.api.application.service.AddressService;
+import com.eventostec.api.application.service.AddressServiceImpl;
 import com.eventostec.api.domain.address.Address;
 import com.eventostec.api.domain.event.Event;
 import com.eventostec.api.domain.event.EventRequestDTO;
@@ -23,7 +23,7 @@ class AddressServiceTest {
     private JpaAddressRepository addressRepository;
 
     @InjectMocks
-    private AddressService addressService;
+    private AddressServiceImpl addressService;
 
     @BeforeEach
     void setUp() {
