@@ -4,7 +4,7 @@ import com.eventostec.api.application.service.AddressService;
 import com.eventostec.api.application.service.CouponService;
 import com.eventostec.api.application.service.EventServiceImpl;
 import com.eventostec.api.domain.event.*;
-import com.eventostec.api.adapters.outbound.repositories.JpaEventRepository;
+import com.eventostec.api.adapters.outbound.repositories.eventRepo.JpaEventRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

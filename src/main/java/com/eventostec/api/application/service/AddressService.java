@@ -3,7 +3,7 @@ package com.eventostec.api.application.service;
 import com.eventostec.api.domain.address.Address;
 import com.eventostec.api.domain.event.Event;
 import com.eventostec.api.domain.event.EventRequestDTO;
-import com.eventostec.api.adapters.outbound.repositories.AddressRepository;
+import com.eventostec.api.adapters.outbound.repositories.addressRepo.JpaAddressRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class AddressService {
 
-    private final AddressRepository addressRepository;
+    private final JpaAddressRepository addressRepository;
 
     public void createAddress(EventRequestDTO data, Event event) {
         Address address = new Address();

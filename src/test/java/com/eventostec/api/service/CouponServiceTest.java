@@ -4,8 +4,8 @@ import com.eventostec.api.application.service.CouponService;
 import com.eventostec.api.domain.coupon.Coupon;
 import com.eventostec.api.domain.coupon.CouponRequestDTO;
 import com.eventostec.api.domain.event.Event;
-import com.eventostec.api.adapters.outbound.repositories.CouponRepository;
-import com.eventostec.api.adapters.outbound.repositories.JpaEventRepository;
+import com.eventostec.api.adapters.outbound.repositories.couponRepo.JpaCouponRepository;
+import com.eventostec.api.adapters.outbound.repositories.eventRepo.JpaEventRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -20,7 +20,7 @@ import static org.mockito.Mockito.*;
 class CouponServiceTest {
 
     @Mock
-    private CouponRepository couponRepository;
+    private JpaCouponRepository couponRepository;
 
     @Mock
     private JpaEventRepository eventRepository;

@@ -1,4 +1,4 @@
-package com.eventostec.api.adapters.outbound.repositories;
+package com.eventostec.api.adapters.outbound.repositories.eventRepo;
 
 import com.eventostec.api.adapters.outbound.entities.JpaEventEntity;
 import com.eventostec.api.domain.event.Event;
