@@ -10,4 +10,6 @@ import java.util.UUID;
 
 public interface JpaCouponRepository extends JpaRepository <JpaCouponEntity, UUID> {
     List<Coupon> findByEventIdAndValidAfter(UUID eventId, Date currentDate);
+
+
 }

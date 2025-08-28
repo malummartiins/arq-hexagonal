@@ -19,7 +19,7 @@ import java.util.UUID;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class JpaEventEntity {
+public class JpaEventEntity extends Event {
 
     @Id
     @GeneratedValue
